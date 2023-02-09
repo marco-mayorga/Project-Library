@@ -38,9 +38,11 @@ function addBookToLibrary() {
 }
 
 // Loops through books in list and displays them
+let lastIndex = 0
 function displayBook() {
     // Loops through all items in list
-    for (let i = 0; i < myLibrary.length; i++) {
+    for (let i = lastIndex; i < myLibrary.length; i++) {
+
         let table = document.getElementById("book-table");
         // inserting first row with book data and inserting the cells into the row
         let newBookRow = table.insertRow(i + 1);
@@ -53,6 +55,8 @@ function displayBook() {
         titleCell.innerHTML = myLibrary[i].title;
         pagesCell.innerHTML = myLibrary[i].pages;
         readCell.innerHTML = myLibrary[i].read;
+        lastIndex = i + 1;
+        console.log(lastIndex)
     }
 }
 // Calls the addBooksToLibrary Function when addbookbutton is pressed.
