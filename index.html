@@ -31,20 +31,22 @@
                 </div>
                 <div class="book-info">
                     <label for="read">Read: </label>
-                    <input type="checkbox" name="read" id="read">
+                    <input type="checkbox" name="read" id="read" class="checkbox">
                 </div>
-                <button id="add-book-button">Add Book</button>
+                <button id="add-book-button" class="button">Add Book</button>
             </form>
         </section>
         <section id="info-on-books">
             <table id="book-table">
-                <tr id="table-header">
-                    <th>Author</th>
-                    <th>Title</th>
-                    <th>Pages In Book</th>
-                    <th>Read</th>
-                    <th>Delete</th>
-                </tr>
+                <tbody id="tbody-of-books">
+                    <tr id="table-header">
+                        <th>Author</th>
+                        <th>Title</th>
+                        <th>Pages In Book</th>
+                        <th>Read</th>
+                        <th></th>
+                    </tr>
+                </tbody>
 
             </table>
         </section>
