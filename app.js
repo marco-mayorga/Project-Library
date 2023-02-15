@@ -77,7 +77,7 @@ form.addEventListener("submit", (event) => {
         title.value = "";
         pages.value = "";
         read.checked = false;
-        console.log(myLibrary);
+
 
         // Checks the read checkbox and updates the list
         // I subtract one from index because of the title Row
@@ -95,7 +95,7 @@ form.addEventListener("submit", (event) => {
             const tableHeader = document.getElementById("tbody-of-books")
             tableHeader.removeChild(newBookRow);
             myLibrary.splice(myLibrary[newBookRow.rowIndex - 1], 1)
-            console.log(myLibrary);
+
         })
     }
 
