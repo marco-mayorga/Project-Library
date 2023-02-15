@@ -37,6 +37,10 @@ function addBookToLibrary() {
 
 }
 
+function deleteBookFromList(index) {
+    myLibrary.splice(index, 1);
+}
+
 // Loops through books in list and displays them
 let lastIndex = 0
 function displayBook() {
@@ -50,15 +54,40 @@ function displayBook() {
         let titleCell = newBookRow.insertCell(1);
         let pagesCell = newBookRow.insertCell(2);
         let readCell = newBookRow.insertCell(3);
+        let deleteCell = newBookRow.insertCell(4);
         // Making the inner html of each cell what it needs to be
         authorCell.innerHTML = myLibrary[i].author;
         titleCell.innerHTML = myLibrary[i].title;
         pagesCell.innerHTML = myLibrary[i].pages;
-        readCell.innerHTML = myLibrary[i].read;
+        // Checks if read is true or not and creates the checkbox element
+        let readCheckbox = document.createElement("input");
+        readCheckbox.setAttribute("type", "checkbox");
+        readCell.appendChild(readCheckbox);
+        if (myLibrary[i].read === true) {
+            readCheckbox.checked = true;
+        } else {
+            readCheckbox.checked = false;
+        }
+
+        // Delete button
+        let deleteButton = document.createElement("button");
+        let buttonText = document.createTextNode("Delete");
+        deleteButton.classList = "delete-button"
+        deleteButton.appendChild(buttonText);
+        deleteCell.appendChild(deleteButton);
+        // Updates the last object (book) index
+        deleteButton.addEventListener("click", deleteBookFromList(i));
+
         lastIndex = i + 1;
         console.log(lastIndex)
     }
+
+
 }
+
+
 // Calls the addBooksToLibrary Function when addbookbutton is pressed.
 addBookButton.addEventListener("click", addBookToLibrary);
 
+// TO_DO
+// Make A button to remove one book
