@@ -10,3 +10,8 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
 }
+
+/* Sets input box colors to gray */
+.form-control:valid {
+    background-color: #444444 !important;
+}
