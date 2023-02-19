@@ -9,8 +9,7 @@ class Book {
         this.pages = pages;
         this.read = read;
     }
-}
-
+};
 
 const form = document.getElementById("form");
 form.addEventListener("submit", (event) => {
@@ -26,23 +25,25 @@ form.addEventListener("submit", (event) => {
     // Gets the table element
     const table = document.getElementById("book-table");
 
-    // Inserts new row into table and adds a class of row
-    const newBookRow = table.insertRow();
-    newBookRow.classList.add("books");
-
-    // Puts cells into rows
-    const authorCell = newBookRow.insertCell(0);
-    const titleCell = newBookRow.insertCell(1);
-    const pagesCell = newBookRow.insertCell(2);
-    const readCell = newBookRow.insertCell(3);
-    const deleteCell = newBookRow.insertCell(4);
-
     // Creates A new class instance
     const newBook = new Book(author.value, title.value, pages.value, read.checked);
     // Making sure that the values aren't empty and then creates the table row and eachc cell
     if (author.value.length !== 0 || title.value.length !== 0 || pages.value.length !== 0) {
         // Moves the data to the list
         myLibrary.push(newBook);
+        console.log(myLibrary)
+
+        // Inserts new row into table and adds a class of row
+        const newBookRow = table.insertRow();
+        newBookRow.classList.add("books");
+
+        // Puts cells into rows
+        const authorCell = newBookRow.insertCell(0);
+        const titleCell = newBookRow.insertCell(1);
+        const pagesCell = newBookRow.insertCell(2);
+        const readCell = newBookRow.insertCell(3);
+        const deleteCell = newBookRow.insertCell(4);
+
 
         // Making the inner html of each cell the value of each input box
         authorCell.innerHTML = author.value;
@@ -80,9 +81,8 @@ form.addEventListener("submit", (event) => {
         pages.value = "";
         read.checked = false;
 
-
         // Checks the read checkbox and updates the list
-        // I subtract one from index because of the title Row
+        // I subtract one from index because it starts at 1 because of the title row
         readCheckbox.addEventListener("click", () => {
             if (readCheckbox.checked === true) {
                 myLibrary[newBookRow.rowIndex - 1]["read"] = true;
@@ -92,14 +92,21 @@ form.addEventListener("submit", (event) => {
         });
 
         // Deletes row noded from document and updates the list
-        // I subtract one from index because of the title Row
         deleteButton.addEventListener("click", () => {
             const tableHeader = document.getElementById("tbody-of-books")
             tableHeader.removeChild(newBookRow);
-            myLibrary.splice(myLibrary[newBookRow.rowIndex - 1], 1)
+            myLibrary.splice(newBook.index, 1);
+            // Reindexes each row after each delete
+            for (let item in myLibrary) {
+                myLibrary[item]["index"] = item;
+            }
+            console.log(newBook.index);
+            console.log(myLibrary);
+        });
 
-        })
-    }
-
-
+        // Adds an index to each row after each submit
+        for (let item in myLibrary) {
+            myLibrary[item]["index"] = item;
+        }
+    };
 });
