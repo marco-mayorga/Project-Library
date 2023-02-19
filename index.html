@@ -12,28 +12,28 @@
     <script type="module" src="./app.js" defer></script>
 </head>
 
-<body>
+<body data-bs-theme="dark">
     <header>
         <h1 class="d-flex justify-content-center">Book List</h1>
     </header>
     <main class="container">
         <section id="add-book-info row ">
             <form class="" id="form">
-                <div class="book-info form-floating mb-3">
-                    <input class="form-control" type="text" placeholder="Author Of Book" id="author">
+                <div class="book-info form-floating mb-3 text-white">
+                    <input class="form-control text-white" type="text" placeholder="Author Of Book" id="author">
                     <label for="author">Author Of Book</label>
                 </div>
-                <div class="book-info form-floating mb-3">
+                <div class="book-info form-floating mb-3 text-white">
                     <input class="form-control" type="text" placeholder="Title Of Book" id="title">
                     <label for="title">Title Of Book</label>
                 </div>
-                <div class="book-info form-floating mb-3">
+                <div class="book-info form-floating mb-3 text-white">
                     <input class="form-control" type="number" placeholder="Pages In Book:" id="pages">
                     <label for="pages">Pages In Book:</label>
                 </div>
                 <div class="book-info form-check mb-3 d-flex justify-content-center">
                     <input class="checkbox form-check-input" type="checkbox" id="read" checked>
-                    <label class="form-check-label" for="read">
+                    <label class="form-check-label text-white" for="read">
                         Have you read the book?
                     </label>
                 </div>
@@ -41,7 +41,7 @@
             </form>
         </section>
         <section id="info-on-books" class="mb-3">
-            <table id="book-table" class="container text-center">
+            <table id="book-table" class="container text-center text-white">
                 <tbody id="tbody-of-books">
                     <tr id="table-header">
                         <th>Author</th>
