@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -12,24 +12,26 @@
     <script type="module" src="./app.js" defer></script>
 </head>
 
-<body data-bs-theme="dark">
+<body>
     <header>
         <h1 class="d-flex justify-content-center">Book List</h1>
     </header>
     <main class="container text-center">
         <section id="add-book-info row">
-            <form class="" id="form">
+            <form class="needs-validation" id="form">
                 <div class="book-info form-floating mb-3 text-white">
-                    <input class="form-control text-white" type="text" placeholder="Author Of Book" id="author">
-                    <label for="author">Author Of Book</label>
+                    <input class="form-control text-white" type="text" placeholder="Author Of Book" id="author"
+                        required>
+                    <label class="form-label" for="author">Author Of Book</label>
                 </div>
                 <div class="book-info form-floating mb-3 text-white">
-                    <input class="form-control text-white" type="text" placeholder="Title Of Book" id="title">
-                    <label for="title">Title Of Book</label>
+                    <input class="form-control text-white" type="text" placeholder="Title Of Book" id="title" required>
+                    <label class="form-label" for="title">Title Of Book</label>
                 </div>
                 <div class="book-info form-floating mb-3 text-white">
-                    <input class="form-control text-white" type="number" placeholder="Pages In Book:" id="pages">
-                    <label for="pages">Pages In Book:</label>
+                    <input class="form-control text-white" type="number" placeholder="Pages In Book:" id="pages"
+                        required>
+                    <label class="form-label" for="pages">Pages In Book:</label>
                 </div>
                 <div class="book-info form-check mb-3 d-flex justify-content-center">
                     <input class="checkbox form-check-input me-1" type="checkbox" id="read" checked>
