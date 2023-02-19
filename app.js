@@ -40,7 +40,7 @@ form.addEventListener("submit", (event) => {
     // Creates A new class instance
     const newBook = new Book(author.value, title.value, pages.value, read.checked);
     // Making sure that the values aren't empty and then creates the table row and eachc cell
-    if (author.value.length != 0 || title.value.length != 0 || pages.value.length != 0) {
+    if (author.value.length !== 0 || title.value.length !== 0 || pages.value.length !== 0) {
         // Moves the data to the list
         myLibrary.push(newBook);
 
