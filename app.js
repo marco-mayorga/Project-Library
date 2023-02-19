@@ -54,6 +54,7 @@ form.addEventListener("submit", (event) => {
         readCheckbox.setAttribute("type", "checkbox");
         readCheckbox.classList.add("checkbox");
         readCheckbox.classList.add("checkbox-in-list");
+        readCheckbox.classList.add("form-check-input");
 
         // Checks if read is true or not so it adds it correctly to the new book node
         if (read.checked === true) {
@@ -67,6 +68,7 @@ form.addEventListener("submit", (event) => {
         deleteButton.classList.add("button");
         deleteButton.classList.add("delete");
         deleteButton.innerHTML = "Delete";
+        deleteButton.classList = "btn btn-secondary"
 
         // Appends child to the cell it belongs in
         readCell.appendChild(readCheckbox);
